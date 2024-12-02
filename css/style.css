@@ -1,0 +1,373 @@
+/********** Template CSS **********/
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+img.animated.pulse {
+    animation-duration: 5s;
+}
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary {
+    color: var(--bs-white);
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+
+/*** Navbar ***/
+.sticky-top {
+    top: -150px;
+    transition: .5s;
+}
+
+.navbar {
+    padding: 11px 0 !important;
+    height: 85px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 45px;
+    padding: 0;
+    color: var(--bs-dark);
+    font-weight: 500;
+    transition: .5s;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-white);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        padding: 0 15px;
+        background: var(--bs-primary);
+    }
+
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Hero Header ***/
+.hero-header {
+    position: relative;
+    margin-top: -85px;
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+    background: url(../img/bg.png) center center no-repeat;
+    background-size: cover;
+}
+
+.hero-header::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .1);
+    clip-path: polygon(66% 0, 100% 0, 100% 100%, 33% 100%);
+}
+
+.hero-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--bs-light);
+}
+
+/* Hero Section Gambar */
+.hero-image {
+    width: 500px;
+    max-width: 100%; /* Pastikan gambar tidak terlalu besar */
+    height: auto; /* Jaga proporsi gambar */
+    border-radius: 10px; /* Tambahkan efek sudut membulat */
+}
+
+/*** Feature ***/
+.feature-item::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .1);
+    clip-path: polygon(66% 0, 100% 0, 100% 100%, 33% 100%);
+}
+
+.feature-item .border {
+    position: relative;
+    border-color: rgba(255, 255, 255, .2) !important;
+    z-index: 1;
+}
+
+
+/*** Product ***/
+.product-item {
+    transition: .1s;
+}
+
+.product-item:hover {
+    border-width: 0 !important;
+    box-shadow: 0 0 35px rgba(144, 188, 121, .25);
+}
+
+.product-item:hover a.btn {
+    color: var(--bs-white);
+    background: var(--bs-primary);
+}
+
+/* CSS untuk gambar responsif */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CSS untuk gambar dalam kontainer produk */
+.product-item img {
+    width: 100%; /* Memastikan gambar mengisi lebar kontainer */
+    height: auto; /* Menjaga rasio aspek gambar */
+    display: block; /* Menghapus spasi bawah */
+    margin: 0 auto; /* Mengatur gambar di tengah */
+}
+
+/* CSS untuk gambar dengan border dan shadow */
+.product-image {
+    border: 3px solid #ddd; /* Menambahkan border pada gambar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan pada gambar */
+    transition: all 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Efek saat hover gambar */
+.product-image:hover {
+    transform: scale(1.05); /* Membesarkan gambar saat hover */
+}
+
+/* CSS untuk gambar dengan ukuran tertentu (opsional jika dibutuhkan) */
+.product-image {
+    width: 100%; /* Ukuran lebar gambar */
+    max-width: 300px; /* Maksimal lebar gambar */
+    height: auto; /* Menjaga rasio aspek */
+}
+
+
+.testimonial-container {
+        text-align: center;
+        max-width: 100%;
+        margin: 0;
+        padding: 60px 15px;
+        background-color: #90BC79; /* Latar belakang hijau penuh */
+        border-radius: 0;
+        min-height: 100vh; /* Mengisi layar penuh */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .testimonial-container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #fff; /* Warna teks putih */
+    }
+    
+    .testimonial-container .fw-light {
+        font-weight: 300;
+        color: #000000; 
+    }
+    
+    .testimonial-container .testimonial-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #fff; 
+    }
+    
+    .testimonial-slider {
+        display: flex; /* Membuat slider menjadi horizontal */
+        justify-content: center; /* Memastikan testimonial berada di tengah */
+        gap: 40px; /* Memberi jarak antar testimonial */
+        flex-wrap: wrap; /* Memungkinkan responsivitas */
+    }
+    
+    .testimonial-item {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Menambahkan jarak bawah untuk responsivitas */
+    }
+    
+    .testimonial-item p {
+        font-size: 1rem;
+        color: #777;
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-item h5 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .rating {
+        margin-bottom: 15px;
+    }
+    
+    .rating .fa-star,
+    .rating .fa-star-half-alt {
+        font-size: 1.2rem;
+        color: #ffcc00; /* Warna bintang kuning */
+    }
+    
+
+/*** Footer ***/
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+    color: var(--bs-body);
+    font-weight: normal;
+    transition: .3s;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--bs-primary);
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    border-top: 3px solid var(--bs-light);
+}
+
+.footer .copyright a {
+    color: var(--bs-body);
+}
+
+.footer .copyright a:hover {
+    color: var(--bs-primary);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 3px solid var(--bs-light);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+/* Styling untuk Logo dan Teks di Navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Memastikan gambar dan teks sejajar secara vertikal */
+}
+
+.navbar-logo {
+    width: 280px; /* Ukuran logo */
+    height: auto; /* Menjaga proporsi gambar */
+    object-fit: contain; /* Menjaga gambar tetap dalam bentuk aslinya */
+}
